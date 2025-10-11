@@ -3,12 +3,12 @@ export libHYPRE
 
 using OpenBLAS_jll
 using LAPACK_jll
+using CompilerSupportLibraries_jll
 using OpenMPI_jll
-using MPIPreferences
 JLLWrappers.@generate_wrapper_header("HYPRE")
-JLLWrappers.@declare_library_product(libHYPRE, "libHYPRE.so")
+JLLWrappers.@declare_library_product(libHYPRE, "libHYPRE.so.300")
 function __init__()
-    JLLWrappers.@generate_init_header(OpenBLAS_jll, LAPACK_jll, OpenMPI_jll, MPIPreferences)
+    JLLWrappers.@generate_init_header(OpenBLAS_jll, LAPACK_jll, CompilerSupportLibraries_jll, OpenMPI_jll, MPIPreferences)
     JLLWrappers.@init_library_product(
         libHYPRE,
         "lib/libHYPRE.so",
