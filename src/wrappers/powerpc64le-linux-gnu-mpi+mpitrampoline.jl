@@ -6,7 +6,7 @@ using LAPACK_jll
 using CompilerSupportLibraries_jll
 using MPItrampoline_jll
 JLLWrappers.@generate_wrapper_header("HYPRE")
-JLLWrappers.@declare_library_product(libHYPRE, "libHYPRE.so.300")
+JLLWrappers.@declare_library_product(libHYPRE, "libHYPRE.so.301")
 function __init__()
     JLLWrappers.@generate_init_header(OpenBLAS_jll, LAPACK_jll, CompilerSupportLibraries_jll, MPItrampoline_jll, MPIPreferences)
     JLLWrappers.@init_library_product(
